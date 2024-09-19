@@ -1,0 +1,40 @@
+-- Crear la tabla dim_calendar con una columna adicional
+CREATE TABLE `tu_proyecto.tu_dataset.dim_calendar` (
+  Date DATE,
+  Year INT64,
+  Quarter INT64,
+  Nro_Month INT64,
+  Day INT64,
+  YYYYMMDD INT64,
+  Month STRING,
+  Month_Year STRING,
+  Tiempo_de_duracion STRING,
+  EsFinDeSemana BOOL  -- Nueva columna
+);
+
+-- Generar el rango de fechas desde 2015 hasta el año siguiente al actual
+INSERT INTO `tu_proyecto.tu_dataset.dim_calendar`
+WITH date_range AS (
+  SELECT
+    DATE_ADD(DATE '2015-01-01', INTERVAL n DAY) AS Date
+  FROM
+    UNNEST(GENERATE_ARRAY(0, DATE_DIFF(CURRENT_DATE(), DATE '2015-01-01', DAY))) AS n
+)
+
+SELECT
+  Date,
+  EXTRACT(YEAR FROM Date) AS Year,
+  EXTRACT(QUARTER FROM Date) AS Quarter,
+  EXTRACT(MONTH FROM Date) AS Nro_Month,
+  EXTRACT(DAY FROM Date) AS Day,
+  CAST(FORMAT_DATE('%Y%m%d', Date) AS INT64) AS YYYYMMDD,
+  FORMAT_DATE('%B', Date) AS Month,
+  CONCAT(FORMAT_DATE('%b', Date), ' ', EXTRACT(YEAR FROM Date)) AS Month_Year,
+  'Calcular_duración_con_función_específica' AS Tiempo_de_duracion,
+  EXTRACT(DAYOFWEEK FROM Date) IN (1, 7) AS EsFinDeSemana  -- 1: Domingo, 7: Sábado
+FROM
+  date_range;
+
+
+-- la columna Tiempo_de_duracion debe ser calculada según la lógica específica de tu aplicación. En el ejemplo, se coloca un marcador de posición.
+-- la columna EsFinDeSemana se calcula verificando si el día de la semana (DAYOFWEEK) de la fecha es igual a 1 (Domingo) o 7 (Sábado). Puedes ajustar la lógica según tus necesidades específicas. Esta columna podría ser útil para analizar patrones de actividad en fines de semana o días laborables.
