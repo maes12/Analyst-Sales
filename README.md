@@ -9,39 +9,30 @@ Analisis Ventas
 
 Necesidad del Negocio
 Actualmente, en la compañía tenemos las siguientes tablas:
-a) Productos: Contiene el detalle de los productos que la Compañía vende.
-b) Geografía: Contiene el detalle geográfico de donde puede tener presencia
+- a) Productos: Contiene el detalle de los productos que la Compañía vende.
+- b) Geografía: Contiene el detalle geográfico de donde puede tener presencia
 o no de ventas la compañía
-c) Empleados: Contiene la información de los vendedores
-d) Distribuidores: Contiene la información de los distribuidores dependiendo
+- c) Empleados: Contiene la información de los vendedores
+- d) Distribuidores: Contiene la información de los distribuidores dependiendo
 de la zona geográfica
-e) Ventas: Transaccional donde se registra todas aquellas ventas que se
+- e) Ventas: Transaccional donde se registra todas aquellas ventas que se
 hacen en la empresa y se relaciona con sus claves primarias y foráneas a
 las demás tablas.
 Nos encontramos en la necesidad de realizar un informe en Power BI que nos
 permita conocer de forma dinámica las cifras de nuestro de negocio estableciendo
 indicadores de relevancia para la Gerencia. Este informe tiene como premisas:
-a) La primera hoja: será vista por la Alta Gerencia y requiere cifras claves
+- a) La primera hoja: será vista por la Alta Gerencia y requiere cifras claves
 que le permita conocer de forma inmediata el estatus de las Ventas en la
 compañía, esta hoja formará parte de un Dashboard y por ello es
 importante seleccionar los objetos visuales e indicadores de rápida y fácil
 comprensión. Algunos indicadores pueden:
-⮚ Variación Mensual
-⮚ Variación Anual
-⮚ Top de Vendedores
-⮚ Top de distribuidores
-⮚ Margen de ganancia
-⮚ Total de ventas (Cantidad y en monto moneda)
-Nota: Los ítems anteriormente mencionados son una referencia en la que se
-puede guiar. Siéntase libre de generar su propuesta.
-b) Proponer las siguientes hojas (al menos 2): las cuales permitirán
-conocer con mayor detalle cómo han sido las ventas por geografía,
-productos, distribuidores y empleados. Desarrolle la distribución a nivel
-visual y de KPIs, objetos visuales acorde al indicador, look and feel.
-c) Adicionar en todas las hojas al menos 2 segmentadores que considere
-importantes para profundizar o explorar la información.
-d) Es válido el uso de jerarquías para implementar drill Down en los objetos
-visuales
+- ⮚ **Variación Mensual**
+- ⮚ **Variación Anual**
+- ⮚ **Top de Vendedores**
+- ⮚ **Top de distribuidores**
+- ⮚ **Margen de ganancia**
+- ⮚ **Total de ventas (Cantidad y en monto moneda)**
+
 
 ## Habilidades en SQL
 
